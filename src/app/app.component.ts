@@ -60,6 +60,7 @@ export class AppComponent implements OnInit, AfterContentInit, OnDestroy {
         this.checkAlarmSub = combineLatest(this.alarms$, this.clockValue$).pipe(
             map(( [alarms, clockValue] ) => this.checkAlarm(alarms, clockValue)),
         ).subscribe(( alarm ) => {
+            console.log('clock subscribe', alarm);
             this.isBellRinging = !!alarm;
             this.cdRef.markForCheck();
         });
