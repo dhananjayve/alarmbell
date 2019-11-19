@@ -1,0 +1,8 @@
+<div class="bell-wrapper">
+    <div class="bell">
+        <div class="circle"></div>
+        <div class="line"></div>
+    </div>
+</div>
+<button type="button" class="bell-btn" (click)="handleBellBtnClick($event)">Got It</button>
+<audio #alarmAudio src="../../assets/audio/alarm.wav" type="audio/wav" loop id="alarm_audio"></audio>

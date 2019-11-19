@@ -1,0 +1,111 @@
+<div class="alarm-settings-inner">
+    <div class="frequency-block">
+        <div class="title">WHEN?</div>
+        <div class="days">
+            <!-- Sunday -->
+            <owl-check-box [binary]="false"
+                           class="settings-checkbox sun"
+                           [ngClass]="{'checkbox-on': chkBox0.checked}"
+                           [(ngModel)]="days"
+                           [value]="0" #chkBox0="owlCheckBox">
+                <owl-check-box-toggle>Sun</owl-check-box-toggle>
+            </owl-check-box>
+
+            <!-- Monday -->
+            <owl-check-box [binary]="false"
+                           class="settings-checkbox mon"
+                           [ngClass]="{'checkbox-on': chkBox1.checked}"
+                           [(ngModel)]="days"
+                           [value]="1" #chkBox1="owlCheckBox">
+                <owl-check-box-toggle>Mon</owl-check-box-toggle>
+            </owl-check-box>
+
+            <!-- Tuesday -->
+            <owl-check-box [binary]="false"
+                           class="settings-checkbox tue"
+                           [ngClass]="{'checkbox-on': chkBox2.checked}"
+                           [(ngModel)]="days"
+                           [value]="2" #chkBox2="owlCheckBox">
+                <owl-check-box-toggle>Tue</owl-check-box-toggle>
+            </owl-check-box>
+
+            <!-- Wednesday -->
+            <owl-check-box [binary]="false"
+                           class="settings-checkbox wed"
+                           [ngClass]="{'checkbox-on': chkBox3.checked}"
+                           [(ngModel)]="days"
+                           [value]="3" #chkBox3="owlCheckBox">
+                <owl-check-box-toggle>Wed</owl-check-box-toggle>
+            </owl-check-box>
+
+            <!-- Thursday -->
+            <owl-check-box [binary]="false"
+                           class="settings-checkbox thu"
+                           [ngClass]="{'checkbox-on': chkBox4.checked}"
+                           [(ngModel)]="days"
+                           [value]="4" #chkBox4="owlCheckBox">
+                <owl-check-box-toggle>Thu</owl-check-box-toggle>
+            </owl-check-box>
+
+            <!-- Friday -->
+            <owl-check-box [binary]="false"
+                           class="settings-checkbox fri"
+                           [ngClass]="{'checkbox-on': chkBox5.checked}"
+                           [(ngModel)]="days"
+                           [value]="5" #chkBox5="owlCheckBox">
+                <owl-check-box-toggle>Fri</owl-check-box-toggle>
+            </owl-check-box>
+
+            <!-- Saturday -->
+            <owl-check-box [binary]="false"
+                           class="settings-checkbox sat"
+                           [ngClass]="{'checkbox-on': chkBox6.checked}"
+                           [(ngModel)]="days"
+                           [value]="6" #chkBox6="owlCheckBox">
+                <owl-check-box-toggle>Sat</owl-check-box-toggle>
+            </owl-check-box>
+        </div>
+    </div>
+
+    <div class="time-block">
+        <div class="title">WHAT TIME?</div>
+        <div class="time">
+            <div class="hours">
+                <button type="button"
+                        class="time-control-btn"
+                        [disabled]="!canIncreaseHour"
+                        (click)="handleHoursUp($event)">
+                    <i class="fas fa-caret-up"></i>
+                </button>
+                <span class="value">{{hour | doubleDigits}}</span>
+                <button type="button"
+                        class="time-control-btn"
+                        [disabled]="!canDecreaseHour"
+                        (click)="handleHoursDown($event)">
+                    <i class="fas fa-caret-down"></i>
+                </button>
+            </div>
+            <div class="dividers">:</div>
+            <div class="minutes">
+                <button type="button"
+                        class="time-control-btn"
+                        [disabled]="!canIncreaseMinute"
+                        (click)="handleMinutesUp($event)">
+                    <i class="fas fa-caret-up"></i>
+                </button>
+                <span class="value">{{minute | doubleDigits}}</span>
+                <button type="button"
+                        class="time-control-btn"
+                        [disabled]="!canDecreaseMinute"
+                        (click)="handleMinutesDown($event)">
+                    <i class="fas fa-caret-down"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="btn-block">
+        <button type="button" class="settings-btn saving-btn" (click)="handleSavingBtnClick($event)">Save</button>
+        <button *ngIf="alarmId" type="button" class="settings-btn delete-btn" (click)="handleDeleteBtnClick($event)">Delete</button>
+    </div>
+</div>

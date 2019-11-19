@@ -1,0 +1,83 @@
+<div class="alarm-box-column alarm-box-indicator-column">
+    <span class="alarm-box-indicator"
+          [ngClass]="{
+          'alarm-box-indicator-night': !isMorningHour,
+          'alarm-box-indicator-morning': isMorningHour
+          }" ></span>
+</div>
+<div class="alarm-box-column alarm-box-column-inform">
+    <span class="alarm-box-inform-time">
+        {{alarm.hour | doubleDigits}}:{{alarm.minute | doubleDigits}}
+    </span>
+    <span class="alarm-box-inform-days">
+
+        <!-- Sunday -->
+        <owl-check-box [binary]="false"
+                       class="alarm-box-checkbox sun"
+                       [ngClass]="{'checkbox-on': chkBox0.checked}"
+                       [ngModel]="alarm.days" [readonly]="true" [value]="0"
+                       #chkBox0="owlCheckBox">
+            <owl-check-box-toggle>S</owl-check-box-toggle>
+        </owl-check-box>
+
+        <!-- Monday -->
+         <owl-check-box [binary]="false"
+                        class="alarm-box-checkbox mon"
+                        [ngClass]="{'checkbox-on': chkBox1.checked}"
+                        [ngModel]="alarm.days" [readonly]="true" [value]="1"
+                        #chkBox1="owlCheckBox">
+            <owl-check-box-toggle>M</owl-check-box-toggle>
+        </owl-check-box>
+
+        <!-- Tuesday -->
+         <owl-check-box [binary]="false"
+                        class="alarm-box-checkbox tue"
+                        [ngClass]="{'checkbox-on': chkBox2.checked}"
+                        [ngModel]="alarm.days" [readonly]="true" [value]="2"
+                        #chkBox2="owlCheckBox">
+            <owl-check-box-toggle>T</owl-check-box-toggle>
+        </owl-check-box>
+
+        <!-- Wednesday -->
+         <owl-check-box [binary]="false"
+                        class="alarm-box-checkbox wed"
+                        [ngClass]="{'checkbox-on': chkBox3.checked}"
+                        [ngModel]="alarm.days" [readonly]="true" [value]="3"
+                        #chkBox3="owlCheckBox">
+            <owl-check-box-toggle>W</owl-check-box-toggle>
+        </owl-check-box>
+
+        <!-- Thursday -->
+         <owl-check-box [binary]="false"
+                        class="alarm-box-checkbox thu"
+                        [ngClass]="{'checkbox-on': chkBox4.checked}"
+                        [ngModel]="alarm.days" [readonly]="true" [value]="4"
+                        #chkBox4="owlCheckBox">
+            <owl-check-box-toggle>T</owl-check-box-toggle>
+        </owl-check-box>
+
+        <!-- Friday -->
+         <owl-check-box [binary]="false"
+                        class="alarm-box-checkbox fri"
+                        [ngClass]="{'checkbox-on': chkBox5.checked}"
+                        [ngModel]="alarm.days" [readonly]="true" [value]="5"
+                        #chkBox5="owlCheckBox">
+            <owl-check-box-toggle>F</owl-check-box-toggle>
+        </owl-check-box>
+
+        <!-- Saturday -->
+         <owl-check-box [binary]="false"
+                        class="alarm-box-checkbox sat"
+                        [ngClass]="{'checkbox-on': chkBox6.checked}"
+                        [ngModel]="alarm.days" [readonly]="true" [value]="6"
+                        #chkBox6="owlCheckBox">
+            <owl-check-box-toggle>S</owl-check-box-toggle>
+        </owl-check-box>
+    </span>
+</div>
+
+<div class="alarm-box-column alarm-box-column-switch">
+    <owl-switch [ngModel]="alarm.isActive"
+                (click) = "handleClickOnSwitch($event)"
+                (ngModelChange)="handleStatusChange($event)"></owl-switch>
+</div>

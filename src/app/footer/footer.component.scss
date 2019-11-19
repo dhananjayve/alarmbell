@@ -1,0 +1,46 @@
+.app-footer-button {
+  display: inline-block;
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  background: #F86C5F;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: translateX(-50%);
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #FFF;
+    width: 1.5rem;
+    height: 1px;
+    transform: translate(-50%, -50%);
+    transition: 0.3s cubic-bezier(0.28, 0.55, 0.385, 1.65);
+  }
+
+  &:after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+}
+
+.app-footer-button-active {
+  &:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}

@@ -1,0 +1,13 @@
+<app-alarm-settings *ngIf="isConfigSettings;else alarmList"
+                    [alarmId]="alarmOnConfig?.id"
+                    [alarmHour]="alarmOnConfig?.hour"
+                    [alarmMinute]="alarmOnConfig?.minute"
+                    [alarmDays]="alarmOnConfig?.days"
+                    (save)="handleAlarmSave($event)"
+                    (update)="handleAlarmUpdate($event)"
+                    (delete)="handleAlarmDelete($event)"></app-alarm-settings>
+
+<ng-template #alarmList>
+    <app-alarm-list [alarms]="alarms"
+                    (alarmClick)="handleAlarmClick($event)"></app-alarm-list>
+</ng-template>

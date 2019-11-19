@@ -1,0 +1,151 @@
+:host {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.alarm-settings-inner {
+  width: 90%;
+  height: 100%;
+
+  .title {
+    width: 100%;
+    padding: .8rem;
+    border-radius: 4px 4px 0 0;
+    color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+  }
+}
+
+.frequency-block {
+
+  margin-bottom: 1rem;
+
+  .title {
+    background: linear-gradient(to right, #93dccc, #9cd2f9);
+  }
+
+  .days {
+    background-color: #6b6ec5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 5rem;
+    width: 100%;
+  }
+}
+
+.time-block {
+
+  margin-bottom: 1.5rem;
+
+  .title {
+    background: linear-gradient(to right, #fed1a7, #feeca8);
+  }
+
+  .time {
+    background-color: #6b6ec5;
+    color: #FFFFFF;
+    font-size: 2rem;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+
+    .hours,
+    .minutes,
+    .dividers {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dividers {
+      margin: 0 .5rem;
+    }
+  }
+}
+
+.time-control-btn {
+  outline: none;
+  border: none;
+  background: none;
+  padding: 0;
+  color: inherit;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: .4;
+    cursor: default;
+  }
+
+  &:not([disabled]):hover {
+    opacity: .6;
+  }
+}
+
+.btn-block {
+  display: flex;
+  justify-content: space-around;
+}
+
+.settings-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7rem;
+  height: 2rem;
+  border-radius: 30px;
+  transition: all 0.3s linear;
+  outline: none;
+  cursor: pointer;
+}
+
+.saving-btn {
+  color: #fff;
+  background-color: #4c6ea5;
+  border: 1px #46578c solid;
+
+  &:hover {
+    color: #4c6ea5;
+    background-color: #FFFFFF;
+  }
+}
+
+.delete-btn {
+  color: #fff;
+  background-color: #ca181c;
+  border: 1px #aa171b solid;
+
+  &:hover {
+    color: #ca181c;
+    background-color: #FFFFFF;
+  }
+}
+
+
+.settings-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-sizing: border-box;
+  font-size: .9rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  color: #FFFFFF;
+  user-select: none;
+
+  &.sun, &.sat {
+    color: rgba(255, 28, 55, .8);
+  }
+
+  &.checkbox-on {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}

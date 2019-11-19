@@ -1,0 +1,208 @@
+$bell-color: #4492f4;
+$bell-size: 5rem;
+$bell-wrapper-before-extra: .6rem;
+$bell-wrapper-after-extra: 1rem;
+$bell-btn-size: 4rem;
+$bell-btn-before-extra: .3rem;
+$bell-btn-after-extra: .6rem;
+
+.bell-wrapper {
+  width: $bell-size * 2;
+  height: $bell-size * 2;
+  border-radius: 50%;
+  border: 5px solid $bell-color;
+  background: #FFFFFF;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+  }
+
+  &:before {
+    width: $bell-size * 2 + $bell-wrapper-before-extra;
+    height: $bell-size * 2 + $bell-wrapper-before-extra;
+    background: rgba($bell-color, 0.3);
+    top: -$bell-wrapper-before-extra/2;
+    left: -$bell-wrapper-before-extra/2;
+    animation: zooming1 2s linear 1s infinite;
+    z-index: -2;
+  }
+
+  &:after {
+    width: $bell-size * 2 + $bell-wrapper-after-extra;
+    height: $bell-size * 2 + $bell-wrapper-after-extra;
+    background: rgba($bell-color, 0.1);
+    top: -$bell-wrapper-after-extra/2;
+    left: -$bell-wrapper-after-extra/2;
+    animation: zooming2 2s linear infinite;
+    z-index: -3;
+  }
+}
+
+.bell {
+  width: $bell-size;
+  height: $bell-size;
+  background: $bell-color;
+  border-top-left-radius: 2.5rem;
+  border-top-right-radius: 2.5rem;
+  position: relative;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    border-top: .8rem solid transparent;
+    border-bottom: .8rem solid $bell-color;
+    bottom: 0;
+  }
+
+  &:before {
+    border-left: .8rem solid transparent;
+    border-right: .8rem solid $bell-color;
+    left: -.8rem;
+  }
+
+  &:after {
+    border-left: .8rem solid $bell-color;
+    border-right: .8rem solid transparent;
+    right: -.8rem;
+  }
+}
+
+.circle {
+  position: absolute;
+  width: 1.6rem;
+  height: 1.6rem;
+  top: -.6rem;
+  left: 1.7rem;
+  background: $bell-color;
+  border-radius: 50%;
+
+  &:after {
+    content: '';
+    width: 1.6rem;
+    height: 1.6rem;
+    background: $bell-color;
+    position: absolute;
+    bottom: -$bell-size + .3rem;
+    left: 0;
+    border-radius: 50%;
+    animation: ringing 1s linear .5s infinite;
+  }
+}
+
+.line {
+  position: absolute;
+  width: $bell-size + 1.6rem;
+  height: 3px;
+  background: #FFFFFF;
+  bottom: -2px;
+  left: -.8rem;
+  z-index: 1;
+}
+
+.bell-btn {
+  position: relative;
+  border: none;
+  outline: none;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: rgba($bell-color, .6);
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background 0.3s linear;
+
+  &:hover {
+    background: rgba($bell-color, .7);
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+  }
+
+  &:before {
+    width: $bell-btn-size + $bell-btn-before-extra;
+    height: $bell-btn-size + $bell-btn-before-extra;
+    background: rgba($bell-color, 0.3);
+    top: -$bell-btn-before-extra/2;
+    left: -$bell-btn-before-extra/2;
+    animation: zooming1 2s linear 1s infinite;
+    z-index: -2;
+  }
+
+  &:after {
+    width: $bell-btn-size + $bell-btn-after-extra;
+    height: $bell-btn-size + $bell-btn-after-extra;
+    background: rgba($bell-color, 0.1);
+    top: -$bell-btn-after-extra/2;
+    left: -$bell-btn-after-extra/2;
+    animation: zooming2 2s linear infinite;
+    z-index: -3;
+  }
+}
+
+@keyframes ringing {
+  0% {
+    left: 0px;
+  }
+
+  25% {
+    left: 20px;
+  }
+
+  50% {
+    left: 0px;
+  }
+
+  75% {
+    left: -20px;
+  }
+
+  100% {
+    left: 0px;
+  }
+}
+
+@keyframes zooming1 {
+  0% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3, 1.3);
+  }
+  75% {
+    transform: scale(1.5, 1.5);
+  }
+  100% {
+    transform: scale(1.7, 1.7);
+  }
+}
+
+@keyframes zooming2 {
+  0% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3, 1.3);
+  }
+  75% {
+    transform: scale(1.5, 1.5);
+  }
+  100% {
+    transform: scale(1.7, 1.7);
+  }
+}

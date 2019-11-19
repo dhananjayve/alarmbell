@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~owl-ng/assets/style/theme.min.css";
+@import "sass/main";
+
+.alarm-box-checkbox,
+.settings-checkbox {
+  .owl-chkbox-label-content {
+    margin-left: 0;
+  }
+}

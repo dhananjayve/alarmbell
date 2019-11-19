@@ -1,0 +1,8 @@
+<ng-container *ngIf="alarms && alarms.length > 0;else noAlarms" >
+    <app-alarm-box *ngFor="let alarm of alarms" [alarm]="alarm"
+                   (click)="handleAlarmClick(alarm)"
+                   (changeStatus)="handleAlarmStatusChange($event, alarm)"></app-alarm-box>
+</ng-container>
+<ng-template #noAlarms>
+    <div class="no-alarms">No Alarms Configured</div>
+</ng-template>

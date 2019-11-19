@@ -1,0 +1,105 @@
+:host {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 1.3rem;
+}
+
+.alarm-box-indicator-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+}
+
+.alarm-box-indicator {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  margin: 20px auto;
+}
+
+.alarm-box-indicator-morning {
+  background: #F2CF68;
+  box-shadow: 0 0 0 2px rgba(242, 207, 104, 0.4), 0 0 0 4px rgba(242, 207, 104, 0.2);
+}
+
+.alarm-box-indicator-afternoon {
+  background: #B0BFCC;
+  box-shadow: 0 0 0 2px rgba(176, 191, 204, 0.4), 0 0 0 4px rgba(176, 191, 204, 0.2);
+}
+
+.alarm-box-indicator-afternoon {
+  background: #B0BFCC;
+  box-shadow: 0 0 0 2px rgba(176, 191, 204, 0.4), 0 0 0 4px rgba(176, 191, 204, 0.2);
+}
+
+.alarm-box-indicator-night {
+  position: relative;
+  background: #AFB5BD;
+  box-shadow: 0 0 0 2px rgba(175, 181, 189, 0.4), 0 0 0 4px rgba(175, 181, 189, 0.2);
+  transform: translateX(5px);
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -18px;
+    display: block;
+    background: #FFF;
+    width: 25px;
+    height: 20px;
+    border-radius: 100%;
+  }
+}
+
+.alarm-box-column-inform {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  cursor: pointer;
+}
+
+.alarm-box-inform-time {
+  font-size: 3rem;
+  font-weight: 100;
+  padding: 0 .3rem;
+}
+
+.alarm-box-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.alarm-box-column-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  padding: 0 1rem 2rem;
+}
+
+.alarm-box-checkbox {
+  padding: 0 .3rem;
+  color: rgba(96, 96, 96, .3);
+  user-select: none;
+  cursor: default;
+
+  &.checkbox-on {
+    color: rgb(84, 84, 84);
+  }
+
+  &.sun, &.sat {
+    color: rgba(255, 28, 55, .3);
+
+    &.checkbox-on {
+      color: rgba(255, 28, 55, 1);
+    }
+  }
+}
